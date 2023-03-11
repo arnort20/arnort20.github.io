@@ -21,19 +21,19 @@ h1 {
     color: #FFF;
 }
 
-p.cool {
+p {
     font-family: victormono;
     font-style: italic;
     color: azure;
 }
 
-i.cool {
+i {
     font-family: victormono;
     font-style: italic;
     color: azure;
 }
 
-body.cool {
+body {
     background-image: url('img/desktop-1920x1080.jpg');
 }
 
