@@ -1,0 +1,21 @@
+@font-face {
+    font-family: victormono;
+    src: url('VictorMonoAll/TTF/VictorMono-Medium.ttf');
+}
+
+@font-face {
+    font-family: victormono;
+    font-style: italic;
+    src: url('VictorMonoAll/TTF/VictorMono-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: victormono;
+    font-style: oblique;
+    src: url('VictorMonoAll/TTF/VictorMono-Oblique.ttf');
+}
+
+h1 {
+    font-family: victormono;
+    font-style: oblique;
+}
