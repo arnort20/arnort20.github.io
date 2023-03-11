@@ -25,12 +25,14 @@ p {
     font-family: victormono;
     font-style: italic;
     color: azure;
+    font-variant-ligatures: contextual;
 }
 
 i {
     font-family: victormono;
     font-style: italic;
     color: azure;
+    font-variant-ligatures: normal;
 }
 
 body {
@@ -45,6 +47,8 @@ body {
     padding: 10px;
     text-align: center;
 }
+
+
 
 .button {
     background-color: #4CAF50; /* Green */

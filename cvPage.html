@@ -6,15 +6,21 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Nóri's website</title>
         <link rel="stylesheet" href="lukkid.css">
-        <p>i love u nori - eista</p>
+        <script>
+            var eng=true;
+            var result= document.getElementById('flag')
+            function switchLang(){
+                if (eng=true){
+                    eng=false;
+                } else {
+                    eng=true;
+                }
+            }
+        </script>
     </head>
     <body>
-        <script>
-            <Object data ="CV_ENG.pdf" type="application/pdf" width="100%" height="100%">
-                <p>
-                    Error message <a href="CV_ENG.pdf">click here to download the pdf file</a>
-                </p>
-            </Object>
-        </script>
+        
+        <button onclick="switchLang()">Click here to change languages</button>
+        <iframe src="CV_ENG.pdf" style="width:1920px;height: 1080px;border:none;"></iframe>
     </body>
 </html>
