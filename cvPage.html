@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Nóri's website</title>
+        <link rel="stylesheet" href="lukkid.css">
+        <script>
+            onload = function(){
+                eng=false;
+                switchLang();
+            }
+            function switchLang(){
+                if (eng==true ){
+                    document.getElementById('flag').src="img/iceland.gif";
+                    document.getElementById('cv').src="CV_ISL.pdf";
+                    eng=false
+                } else{
+                    document.getElementById('flag').src="img/uk.gif";
+                    document.getElementById('cv').src="CV_ENG.pdf";
+                    eng=true
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Welcome to my professional website! Click the flag gif to switch languages.
+            </h1>
+            <i class="center">
+                If you're looking to hire someone for a crypto or blockchain project of any kind, please do not contact me. I am not interested in working in the crypto space.
+            </i>
+        </header>
+        <img id="flag" alt="flag" style="width: 100px; height: 100px;" onclick="switchLang()">
+        <iframe id="cv"  style="width:1920px;height: 1080px;border:none;"></iframe>
+    </body>
+</html>
