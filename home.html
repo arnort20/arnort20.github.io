@@ -1,61 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, inital-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nóri's website</title>
-        <link rel="stylesheet" href="lukkid.css">
-        <script type="module">
-            import * as THREE from 'https://unpkg.com/three/build/three.module.js';
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-            const renderer = new THREE.WebGLRenderer();
-            renderer.setSize( window.innerWidth, window.innerHeight );
-            document.body.appendChild( renderer.domElement );
-            const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-            const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-            const cube = new THREE.Mesh( geometry, material );
-            scene.add( cube );
-
-            camera.position.z = 5;
-            function animate() {
-                requestAnimationFrame( animate );
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
-                renderer.render( scene, camera );
-            }
-            animate();
-            
-        </script>
+        
     </head>
     <body>
-        <header>
-            <h1>Welcome to my awesome website! != --&gt;</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href ="https://arnort20.github.io/cvPage.html" font-size="20px">Professional site</a></li>
-            </ul>
-        </nav>
-        <section>
-            <img src="img/under-contstruction.gif" alt="under construction">
-            <p class="cool">I love Taiwan. Fuck the chinese communist party!</p>
-        </section>
-        <aside>
-            <div>
-                <img src="img/iceland.gif" width="150px">
-                <img src="img/taiwan.gif" width="150px">
-            </div>
-            <div>
-                <p class="center">If you wanna get in touch, my Discord is Nóri#6246 I am unlikely to answer communications through any other medium.</p>
-                <img src="img/ducky.gif">
-            </div>
-        </aside>
-        <footer>
-            <i class="cool">This is a fancy footer != &lt;--</i>
-        </footer>
+        <canvas id="bg"></canvas>
+        <main>
+
         
+            <header>
+                <h1>Welcome to my awesome website! != --&gt;</h1>
+            </header>
+            <div class="center">
+                <i>This is so cool and fancy!</i>
+                <p>Try dragging the background around and zooming in.</p>
+            </div>
+        </main>
+        <script type="module" src="script.js"></script>
     </body>
 </html>
