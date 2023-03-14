@@ -62,7 +62,7 @@
 
             Array(200).fill().forEach(addStar);
 
-            const spaceTexture = new THREE.TextureLoader().load('img/desktop-1920x1080.jpg');
+            const spaceTexture = new THREE.TextureLoader().load('img/space-bg.jpg');
             scene.background = spaceTexture;
 
             const viewSphere = new THREE.Mesh(
@@ -78,7 +78,7 @@
 
 
 
-            const icelandTexture = new THREE.TextureLoader().load('/img/iceland.gif');
+            const icelandTexture = new THREE.TextureLoader().load('/img/iceland.jpeg');
 
             const geometry = new THREE.BoxGeometry( 1, 1, 1 );
             const material = new THREE.MeshBasicMaterial( { map:icelandTexture } );
@@ -93,8 +93,8 @@
 
             
                 camera.position.z = t * -0.01;
-                camera.position.x = t * -0.0002;
-                camera.rotation.y = t * -0.0002;
+                camera.position.x = t * -0.01;
+                camera.rotation.y = t * -0.01;
               }
             
             document.body.onscroll = moveCamera;
