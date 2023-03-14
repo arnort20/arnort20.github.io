@@ -17,7 +17,7 @@
             </header>
             <div class="center">
                 <i>This is so cool and fancy!</i>
-                <a href="file:///D:/src/arnort20.github.io/cvPage.html">
+                <a href="https://arnort20.github.io/cvPage.html">
                     Click here to see my CV.
                 </a>
             </div>
@@ -71,7 +71,8 @@
             const viewSphere = new THREE.Mesh(
                 new THREE.SphereGeometry( 1, 32, 16 ),
                 new THREE.MeshBasicMaterial({
-                    color: 0xffff55,
+                    color: 0xffff55, 
+                    
                 })
             )
             viewSphere.scale.set(1, 1, 1);
@@ -81,15 +82,23 @@
 
 
 
-            const icelandTexture = new THREE.TextureLoader().load('/img/iceland.jpeg');
+            //const icelandTexture = new THREE.TextureLoader().load('/img/iceland.jpeg');
+            const spinningCube = new THREE.Mesh(
+                new THREE.BoxGeometry( 1, 1, 1 ),
+                new THREE.MeshBasicMaterial({
+                    color: 0x111155,
+                })
+            )
+            spinningCube.scale.set(1, 1, 1);
+            spinningCube.position.set(1, 0, -2);
+            scene.add(spinningCube);
+            // const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+            // const material = new THREE.MeshBasicMaterial( { color: 0x000055 } );
+            // const cube = new THREE.Mesh( geometry, material );
+            // scene.add( cube );
 
-            const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-            const material = new THREE.MeshBasicMaterial( { map:icelandTexture } );
-            const cube = new THREE.Mesh( geometry, material );
-            scene.add( cube );
-
-            cube.position.z = -2;
-            cube.position.x = 1;
+            // cube.position.z = -2;
+            // cube.position.x = 1;
 
             function moveCamera() {
                 const t = document.body.getBoundingClientRect().top;
@@ -113,8 +122,8 @@
                 camera.position.z = Math.cos(cameraAngle) * 10;
                 camera.position.y = Math.sin(cameraAngle) * 10;
                 camera.lookAt( scene.position );
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
+                spinningCube.rotation.x += 0.01;
+                spinningCube.rotation.y += 0.01;
                 renderer.render( scene, camera );
             }
             animate();
