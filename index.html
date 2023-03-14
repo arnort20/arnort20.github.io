@@ -101,30 +101,13 @@
             moveCamera();
 
             //const controls = new OrbitControls(camera, renderer.domElement);
-            var cameraPosX = 0;
-            var cameraPosY = 0;
-            var cameraPosZ = 0;
-            var movingForward = false;
+            var cameraAngle = 0;
             function animate() {
                 requestAnimationFrame( animate );
-                if (cameraPosX > 0.5) {
-                    movingForward = false;
-                }
-                if (cameraPosX < -0.5) {
-                    movingForward = true;
-                }
-                if (movingForward) {
-                    cameraPosX += 0.01;
-                    cameraPosY += 0.01;
-                    cameraPosZ += 0.01;
-                } else {
-                    cameraPosX -= 0.01;
-                    cameraPosY -= 0.01;
-                    cameraPosZ -= 0.01;
-                }
-                camera.position.setX(cameraPosX);
-                camera.position.setY(cameraPosY);
-                camera.position.setZ(cameraPosZ);
+                // move the camera in a circle around the center of the scene
+                cameraAngle += 0.01;
+                camera.position.x = Math.sin(cameraAngle) * 10;
+                camera.position.z = Math.cos(cameraAngle) * 10;
                 cube.rotation.x += 0.01;
                 cube.rotation.y += 0.01;
                 renderer.render( scene, camera );
