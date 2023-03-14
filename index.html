@@ -66,13 +66,13 @@
             scene.background = spaceTexture;
 
             const viewSphere = new THREE.Mesh(
-                new THREE.SphereBufferGeometry( 1, 32, 16 ),
+                new THREE.SphereGeometry( 1, 32, 16 ),
                 new THREE.MeshBasicMaterial({
                     map: spaceTexture,
                 })
             )
-            viewSphere.scale.set(-1, 1, 1);
-            viewSphere.position.set(5, 5, 5);
+            viewSphere.scale.set(1, 1, 1);
+            viewSphere.position.set(0, 0, -5);
             scene.add(viewSphere);
 
 
@@ -85,7 +85,7 @@
             const cube = new THREE.Mesh( geometry, material );
             scene.add( cube );
 
-            cube.position.z = -1;
+            cube.position.z = -2;
             cube.position.x = 1;
 
             function moveCamera() {
@@ -101,10 +101,30 @@
             moveCamera();
 
             //const controls = new OrbitControls(camera, renderer.domElement);
-
+            var cameraPosX = 0;
+            var cameraPosY = 0;
+            var cameraPosZ = 0;
+            var movingForward = false;
             function animate() {
                 requestAnimationFrame( animate );
-                moveCamera();
+                if (cameraPosX > 0.5) {
+                    movingForward = false;
+                }
+                if (cameraPosX < -0.5) {
+                    movingForward = true;
+                }
+                if (movingForward) {
+                    cameraPosX += 0.01;
+                    cameraPosY += 0.01;
+                    cameraPosZ += 0.01;
+                } else {
+                    cameraPosX -= 0.01;
+                    cameraPosY -= 0.01;
+                    cameraPosZ -= 0.01;
+                }
+                camera.position.setX(cameraPosX);
+                camera.position.setY(cameraPosY);
+                camera.position.setZ(cameraPosZ);
                 cube.rotation.x += 0.01;
                 cube.rotation.y += 0.01;
                 renderer.render( scene, camera );
