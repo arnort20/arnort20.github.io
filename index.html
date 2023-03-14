@@ -24,7 +24,7 @@
             //import * as THREE from 'three';
             import * as THREE from 'https://unpkg.com/three/build/three.module.js';
             //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-            import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls';
+            //import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls';
             const scene = new THREE.Scene();
 
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -88,19 +88,19 @@
             cube.position.z = -1;
             cube.position.x = 1;
 
-            // function moveCamera() {
-            //     const t = document.body.getBoundingClientRect().top;
+            function moveCamera() {
+                const t = document.body.getBoundingClientRect().top;
 
             
-            //     camera.position.z = t * -0.01;
-            //     camera.position.x = t * -0.0002;
-            //     camera.rotation.y = t * -0.0002;
-            //   }
+                camera.position.z = t * -0.01;
+                camera.position.x = t * -0.0002;
+                camera.rotation.y = t * -0.0002;
+              }
             
-            // document.body.onscroll = moveCamera;
-            // moveCamera();
+            document.body.onscroll = moveCamera;
+            moveCamera();
 
-            const controls = new OrbitControls(camera, renderer.domElement);
+            //const controls = new OrbitControls(camera, renderer.domElement);
 
             function animate() {
                 requestAnimationFrame( animate );
