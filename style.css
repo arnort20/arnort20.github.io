@@ -36,9 +36,9 @@ i {
     font-variant-ligatures: normal;
 }
 
-/* body {
-    background-image: url('img/desktop-1920x1080.jpg');
-} */
+body {
+    background-image: url('img/space-bg.jpg');
+}
 :root {
     --dark-bg: rgba(15, 15, 15, 0.95);
     --spacing: 350px;

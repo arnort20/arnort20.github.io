@@ -13,11 +13,13 @@
 
         
             <header>
-                <h1>Welcome to my awesome website! != --&gt;</h1>
+                <h1>Welcome to my awesome website! --&gt;</h1>
             </header>
             <div class="center">
                 <i>This is so cool and fancy!</i>
-                <p>Try dragging the background around and zooming in.</p>
+                <a href="file:///D:/src/arnort20.github.io/cvPage.html">
+                    Click here to see my CV.
+                </a>
             </div>
         </main>
         <script type="module">
@@ -108,6 +110,8 @@
                 cameraAngle += 0.01;
                 camera.position.x = Math.sin(cameraAngle) * 10;
                 camera.position.z = Math.cos(cameraAngle) * 10;
+                camera.position.y = Math.sin(cameraAngle) * 10;
+                camera.lookAt( scene.position );
                 cube.rotation.x += 0.01;
                 cube.rotation.y += 0.01;
                 renderer.render( scene, camera );
